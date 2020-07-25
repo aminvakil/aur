@@ -22,6 +22,7 @@ build() {
     cd ${srcdir}/${_pkgname}-${pkgver}
     ./gradlew shadowJar
 }
+
 package() {
     appdir="${pkgdir}/opt/${_pkgname}"
     jar=$(find ${srcdir} -name "tsunami-main-${pkgver}-cli.jar")
