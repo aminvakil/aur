@@ -14,7 +14,6 @@ env:
   - pkg: jmeter-plugins-manager
   - pkg: obfs4proxy-behind-tor
   - pkg: tor-browser-behind-tor
-  - pkg: xssmap
 
 services:
   - docker
