@@ -3,7 +3,6 @@ language: shell
 os: linux
 dist: bionic
 env:
-  - pkg: google-tsunami-security-scanner-plugins-git
   - pkg: assetfinder
   - pkg: assetfinder-git
   - pkg: fcct-bin
@@ -11,6 +10,7 @@ env:
   - pkg: gnome-shell-extension-workspace-matrix
   - pkg: google-tsunami-security-scanner
   - pkg: google-tsunami-security-scanner-git
+  - pkg: google-tsunami-security-scanner-plugins-git
   - pkg: jmeter-plugins-manager
   - pkg: obfs4proxy-behind-tor
   - pkg: tor-browser-behind-tor
