@@ -1,4 +1,4 @@
 #/bin/sh
-sudo pacman -Suy gnupg tor --noconfirm
-sudo systemctl start tor
-gpg --auto-key-locate nodefault,wkd --locate-keys torbrowser@torproject.org
+pacman -Suy gnupg tor --noconfirm
+systemctl start tor
+su devel sh -c "gpg --auto-key-locate nodefault,wkd --locate-keys torbrowser@torproject.org"
