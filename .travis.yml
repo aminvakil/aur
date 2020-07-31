@@ -9,7 +9,7 @@ before_install:
   - docker pull aminvakil/archlinux:devel
 before_script:
   #  - changed_pkg=$(git diff --name-only HEAD HEAD~1 | cut -d "/" -f1)
-  - changed_pkg="tor-browser-behind-tor"
+  - changed_pkg="fcct-bin"
   - if [ ! -d "${changed_pkg}" ]; then exit 0; fi
 script:
   - container_id=$(mktemp)
