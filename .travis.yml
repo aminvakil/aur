@@ -29,5 +29,5 @@ script:
   - if [ -f travis/"${pkg}"/before_makepkg.sh ]; then docker exec -i "$(cat ${container_id})" sh < travis/"${pkg}"/before_makepkg.sh; fi
   - docker exec "$(cat ${container_id})" pacman -Suy --noconfirm
   - 'docker exec "$(cat ${container_id})" chown -R devel: /pkg'
-  - docker exec "$(cat ${container_id})" su devel sh -l -c "cd /pkg && makepkg -sri --noconfirm"
+  - docker exec "$(cat ${container_id})" su devel sh -c "cd /pkg && makepkg -sri --noconfirm"
   - docker rm -f "$(cat ${container_id})"
