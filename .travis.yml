@@ -22,7 +22,7 @@ before_install:
 before_script:
   #  - changed_pkg=$(git diff --name-only HEAD HEAD~1 | cut -d "/" -f1)
   #  - changed_pkg="fcct-bin"
-  - if [ ! -d "${pkg}" ]; then exit 0; fi
+  - if [ ! -d "${pkg}" ]; then exit 1; fi
 script:
   - container_id=$(mktemp)
   - docker run --detach --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro --volume="${PWD}/${pkg}":/pkg aminvakil/archlinux:devel > "${container_id}"
