@@ -1,0 +1,33 @@
+pkgbase = ansible-base-git
+	pkgdesc = Radically simple IT automation platform
+	pkgver = r50791.d18901dd4a
+	pkgrel = 3
+	url = https://github.com/ansible/ansible
+	arch = any
+	license = GPL3
+	makedepends = fakeroot
+	makedepends = python-setuptools
+	makedepends = git
+	depends = python
+	depends = python-yaml
+	depends = python-paramiko
+	depends = python-jinja
+	optdepends = sshpass: for ssh connections with password
+	optdepends = python-passlib: crypt values for vars_prompt
+	optdepends = python-netaddr: for the ipaddr filter
+	optdepends = python-systemd: log to journal
+	optdepends = python-pywinrm: connect to Windows machines
+	optdepends = python-dnspython: for dig lookup
+	optdepends = python-jmespath: json_query support
+	provides = ansible-base
+	provides = python-ansible
+	conflicts = ansible-base
+	conflicts = python-ansible
+	replaces = ansible-base
+	replaces = python-ansible
+	backup = etc/ansible/ansible.cfg
+	source = ansible-base-git::git+https://github.com/ansible/ansible.git
+	sha512sums = SKIP
+
+pkgname = ansible-base-git
+
