@@ -3,6 +3,7 @@ language: shell
 os: linux
 dist: bionic
 env:
+  - pkg: ansible-core-git
   - pkg: ansible-base-git
   - pkg: tor-browser-behind-tor
   - pkg: assetfinder
