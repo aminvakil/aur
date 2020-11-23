@@ -9,7 +9,7 @@ name: CI/CD
 jobs:
 
   makepkg:
-    name: Build and install aur packages
+    name: makepkg
     runs-on: ubuntu-latest
     strategy:
       matrix:
