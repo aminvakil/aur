@@ -31,7 +31,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Exit if pkg doesn't exist.
-        run: if [ ! -d "${pkg}" ]; then exit 1; fi
+        run: if [ ! -d "${{ matrix.pkg }}" ]; then exit 1; fi
 
       - name: Pull devel image.
         run: docker pull quay.io/aminvakil/archlinux:devel
@@ -39,11 +39,11 @@ jobs:
       - name: Run a container of devel image and mount package on it.
         run: |
           container_id=$(mktemp)
-          docker run --detach --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro -v "${PWD}/${pkg}":/pkg quay.io/aminvakil/archlinux:devel > "${container_id}"
+          docker run --detach --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro -v "${PWD}/${{ matrix.pkg }}":/pkg quay.io/aminvakil/archlinux:devel > "${container_id}"
           echo "container_id=$container_id" >> $GITHUB_ENV
 
       - name: Execute stuff before makepkg if there is any.
-        run: if [ -f ci/"${pkg}"/before_makepkg.sh ]; then docker exec -i "$(cat ${container_id})" sh < ci/"${pkg}"/before_makepkg.sh; fi
+        run: if [ -f ci/"${{ matrix.pkg }}"/before_makepkg.sh ]; then docker exec -i "$(cat ${container_id})" sh < ci/"${{ matrix.pkg }}"/before_makepkg.sh; fi
 
       - name: Upgrade all packages.
         run: docker exec "$(cat ${container_id})" pacman -Suy --noconfirm
