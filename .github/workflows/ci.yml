@@ -49,7 +49,7 @@ jobs:
         run: docker exec "$(cat ${container_id})" pacman -Suy --noconfirm
 
       - name: Change ownership of package folder
-        run: "docker exec ${container_id} chown -R devel: /pkg"
+        run: "docker exec $(cat ${container_id}) chown -R devel: /pkg"
 
       - name: Makepkg!
         run: docker exec "$(cat ${container_id})" su devel sh -c "cd /pkg && makepkg -sri --noconfirm"
