@@ -20,7 +20,6 @@ jobs:
           - pkg: assetfinder
           - pkg: assetfinder-git
           - pkg: fcct
-          - pkg: touchegg
           - pkg: fcct-bin
           - pkg: gnome-shell-extension-public-ip-git
           - pkg: gnome-shell-extension-workspace-matrix
