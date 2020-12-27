@@ -54,6 +54,12 @@ jobs:
       - name: Change ownership of package folder
         run: "docker exec $(cat ${container_id}) chown -R devel: /pkg"
 
+      - name: Install namcap
+        run: docker exec "$(cat ${container_id})" pacman -S namcap --noconfirm
+
+      - name: Namcap!
+        run: docker exec "$(cat ${container_id})" su devel sh -c "cd /pkg && namcap PKGBUILD"
+
       - name: Makepkg!
         run: docker exec "$(cat ${container_id})" su devel sh -c "cd /pkg && makepkg -sri --noconfirm"
 
