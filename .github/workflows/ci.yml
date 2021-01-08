@@ -106,9 +106,9 @@ jobs:
         run: |
           docker exec "$(cat ${container_id})" bash -c "mkdir -p /root/.ssh/keys"
           docker exec "$(cat ${container_id})" bash -c "echo 'Host aur aur.archlinux.org' > /root/.ssh/config"
-          docker exec "$(cat ${container_id})" bash -c "echo '    User aur' > /root/.ssh/config"
-          docker exec "$(cat ${container_id})" bash -c "echo '    Hostname aur.archlinux.org' > /root/.ssh/config"
-          docker exec "$(cat ${container_id})" bash -c "echo '    IdentityFile ~/.ssh/keys/aur' > /root/.ssh/config"
+          docker exec "$(cat ${container_id})" bash -c "echo '    User aur' >> /root/.ssh/config"
+          docker exec "$(cat ${container_id})" bash -c "echo '    Hostname aur.archlinux.org' >> /root/.ssh/config"
+          docker exec "$(cat ${container_id})" bash -c "echo '    IdentityFile ~/.ssh/keys/aur' >> /root/.ssh/config"
 
       - name: Configure ssh key
         run: docker exec "$(cat ${container_id})" bash -c "echo '${{ secrets.AUR_KEY }}' > /root/.ssh/keys/aur"
