@@ -114,7 +114,7 @@ jobs:
         run: docker exec "$(cat ${container_id})" bash -c "echo '${{ secrets.AUR_KEY }}' > /root/.ssh/keys/aur"
 
       - name: Aurpublish!
-        run: docker exec "$(cat ${container_id})" "cd /repo && ls -a && ls * -a && aurpublish ${{ matrix.pkg }}"
+        run: docker exec "$(cat ${container_id})" bash -c "cd /repo && ls -a && ls * -a && aurpublish ${{ matrix.pkg }}"
 
       - name: Remove ssh key
         run: docker exec "$(cat ${container_id})" "rm /root/.ssh/keys/aur"
