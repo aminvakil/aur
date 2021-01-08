@@ -119,7 +119,7 @@ jobs:
           docker exec "$(cat ${container_id})" bash -c "chmod 400 /root/.ssh/keys/aur"
 
       - name: Aurpublish!
-        run: docker exec "$(cat ${container_id})" bash -c "cd /repo && aurpublish ${{ matrix.pkg }}"
+        run: docker exec "$(cat ${container_id})" bash -c "cd /repo && aurpublish -p ${{ matrix.pkg }} && aurpublish ${{ matrix.pkg }}"
 
       - name: Remove ssh key
         run: docker exec "$(cat ${container_id})" "rm /root/.ssh/keys/aur"
