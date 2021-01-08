@@ -114,7 +114,9 @@ jobs:
         run: docker exec "$(cat ${container_id})" bash -c "echo 'aur.archlinux.org,95.216.144.15 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBLMiLrP8pVi5BFX2i3vepSUnpedeiewE5XptnUnau+ZoeUOPkpoCgZZuYfpaIQfhhJJI5qgnjJmr4hyJbe/zxow=' > /root/.ssh/known_hosts"
 
       - name: Configure ssh key
-        run: docker exec "$(cat ${container_id})" bash -c "echo '${{ secrets.AUR_KEY }}' > /root/.ssh/keys/aur"
+        run: |
+          docker exec "$(cat ${container_id})" bash -c "echo '${{ secrets.AUR_KEY }}' > /root/.ssh/keys/aur"
+          docker exec "$(cat ${container_id})" bash -c "chmod 400 /root/.ssh/keys/aur"
 
       - name: Aurpublish!
         run: docker exec "$(cat ${container_id})" bash -c "cd /repo && aurpublish ${{ matrix.pkg }}"
