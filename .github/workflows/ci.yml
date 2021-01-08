@@ -103,12 +103,12 @@ jobs:
         run: docker exec "$(cat ${container_id})" pacman -S aurpublish --noconfirm
 
       - name: Configure ssh config
-        run: docker exec "$(cat ${container_id})" "cat > ~/.ssh/config <<EOL
-          Host aur aur.archlinux.org
-              User aur
-              Hostname aur.archlinux.org
-              IdentityFile ~/.ssh/keys/aur
-          > EOL"
+        run: |
+          docker exec "$(cat ${container_id})" mkdir ~/.ssh
+          docker exec "$(cat ${container_id})" echo "Host aur aur.archlinux.org" > ~/.ssh/config
+          docker exec "$(cat ${container_id})" echo "    User aur" > ~/.ssh/config
+          docker exec "$(cat ${container_id})" echo "    Hostname aur.archlinux.org" > ~/.ssh/config
+          docker exec "$(cat ${container_id})" echo "    IdentityFile ~/.ssh/keys/aur" > ~/.ssh/config
 
       - name: Configure ssh key
         run: docker exec "$(cat ${container_id})" "echo ${{ secrets.AUR_KEY }} > ~/.ssh/keys/aur"
