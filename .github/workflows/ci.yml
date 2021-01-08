@@ -65,3 +65,59 @@ jobs:
 
       - name: Stop and remove container forcefully.
         run: docker rm -f "$(cat ${container_id})"
+  aurpublish:
+    if: ${{ github.ref == 'refs/heads/master' }}
+    needs: [makepkg]
+    name: Push to AUR
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - pkg: ansible-core-git
+          - pkg: assetfinder
+          - pkg: assetfinder-git
+          - pkg: fcct
+          - pkg: fcct-bin
+          - pkg: gnome-shell-extension-public-ip-git
+          - pkg: gnome-shell-extension-workspace-matrix
+          - pkg: google-tsunami-security-scanner
+          - pkg: google-tsunami-security-scanner-git
+          - pkg: google-tsunami-security-scanner-plugins-git
+          - pkg: jmeter-plugins-manager
+          - pkg: obfs4proxy-behind-tor
+          - pkg: tor-browser-behind-tor
+    steps:
+      - name: Check out the codebase.
+        uses: actions/checkout@v2
+
+      - name: Pull base image.
+        run: docker pull quay.io/aminvakil/archlinux:latest
+
+      - name: Run a container of base image and mount repository on it.
+        run: |
+          container_id=$(mktemp)
+          docker run --detach --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro -v "${PWD}":/repo quay.io/aminvakil/archlinux:latest > "${container_id}"
+          echo "container_id=$container_id" >> $GITHUB_ENV
+
+      - name: Install aurpublish
+        run: docker exec "$(cat ${container_id})" pacman -S aurpublish --noconfirm
+
+      - name: Configure ssh config
+        run: docker exec "$(cat ${container_id})" "cat > ~/.ssh/config <<EOL
+          Host aur aur.archlinux.org
+              User aur
+              Hostname aur.archlinux.org
+              IdentityFile ~/.ssh/keys/aur
+          > EOL"
+
+      - name: Configure ssh key
+        run: docker exec "$(cat ${container_id})" "echo ${{ secrets.AUR_KEY }} > ~/.ssh/keys/aur"
+
+      - name: Aurpublish!
+        run: docker exec "$(cat ${container_id})" "cd /pkg && aurpublish $${{ matrix.pkg }}"
+
+      - name: Remove ssh key
+        run: docker exec "$(cat ${container_id})" "rm ~/.ssh/keys/aur"
+
+      - name: Stop and remove container forcefully.
+        run: docker rm -f "$(cat ${container_id})"
