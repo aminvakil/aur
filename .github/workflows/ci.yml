@@ -104,7 +104,7 @@ jobs:
 
       - name: Configure ssh config
         run: |
-          docker exec "$(cat ${container_id})" mkdir ~/.ssh
+          docker exec "$(cat ${container_id})" mkdir -p ~/.ssh
           docker exec "$(cat ${container_id})" echo "Host aur aur.archlinux.org" > ~/.ssh/config
           docker exec "$(cat ${container_id})" echo "    User aur" > ~/.ssh/config
           docker exec "$(cat ${container_id})" echo "    Hostname aur.archlinux.org" > ~/.ssh/config
