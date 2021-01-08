@@ -118,6 +118,11 @@ jobs:
           docker exec "$(cat ${container_id})" bash -c "echo '${{ secrets.AUR_KEY }}' > /root/.ssh/keys/aur"
           docker exec "$(cat ${container_id})" bash -c "chmod 400 /root/.ssh/keys/aur"
 
+      - name: Configure git user.email and user.name
+        run: |
+          docker exec "$(cat ${container_id})" bash -c "git config --global user.email 'info@aminvakil.com'"
+          docker exec "$(cat ${container_id})" bash -c "git config --global user.name 'Amin Vakil'"
+
       - name: Aurpublish!
         run: docker exec "$(cat ${container_id})" bash -c "cd /repo && aurpublish -p ${{ matrix.pkg }} && aurpublish ${{ matrix.pkg }}"
 
