@@ -29,6 +29,7 @@ jobs:
           - pkg: jmeter-plugins-manager
           - pkg: obfs4proxy-behind-tor
           - pkg: tor-browser-behind-tor
+          - pkg: xssmap
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v2
@@ -86,6 +87,7 @@ jobs:
           - pkg: jmeter-plugins-manager
           - pkg: obfs4proxy-behind-tor
           - pkg: tor-browser-behind-tor
+          - pkg: xssmap
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v2
