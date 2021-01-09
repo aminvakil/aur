@@ -47,7 +47,12 @@ jobs:
           echo "container_id=$container_id" >> $GITHUB_ENV
 
       - name: Execute stuff before makepkg if there is any.
-        run: if [ -f ci/"${{ matrix.pkg }}"/before_makepkg.sh ]; then docker exec -i "$(cat ${container_id})" sh < ci/"${{ matrix.pkg }}"/before_makepkg.sh; fi
+        run: |
+          if [ -f ci/"${{ matrix.pkg }}"/before_makepkg.sh ]; then
+              docker exec -i "$(cat ${container_id})" pacman -S shellcheck
+              docker exec -i "$(cat ${container_id})" shellcheck < ci/"${{ matrix.pkg }}"/before_makepkg.sh
+              docker exec -i "$(cat ${container_id})" sh < ci/"${{ matrix.pkg }}"/before_makepkg.sh
+          fi
 
       - name: Upgrade all packages.
         run: docker exec "$(cat ${container_id})" pacman -Suy --noconfirm
