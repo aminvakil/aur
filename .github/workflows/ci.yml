@@ -16,19 +16,19 @@ jobs:
     strategy:
       matrix:
         include:
-          - pkg: ansible-core-git
+#          - pkg: ansible-core-git
           - pkg: assetfinder
-          - pkg: assetfinder-git
-          - pkg: fcct
-          - pkg: fcct-bin
-          - pkg: gnome-shell-extension-public-ip-git
-          - pkg: gnome-shell-extension-workspace-matrix
-          - pkg: google-tsunami-security-scanner
-          - pkg: google-tsunami-security-scanner-git
-          - pkg: google-tsunami-security-scanner-plugins-git
-          - pkg: jmeter-plugins-manager
-          - pkg: obfs4proxy-behind-tor
-          - pkg: tor-browser-behind-tor
+#          - pkg: assetfinder-git
+#          - pkg: fcct
+#          - pkg: fcct-bin
+#          - pkg: gnome-shell-extension-public-ip-git
+#          - pkg: gnome-shell-extension-workspace-matrix
+#          - pkg: google-tsunami-security-scanner
+#          - pkg: google-tsunami-security-scanner-git
+#          - pkg: google-tsunami-security-scanner-plugins-git
+#          - pkg: jmeter-plugins-manager
+#          - pkg: obfs4proxy-behind-tor
+#          - pkg: tor-browser-behind-tor
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v2
@@ -73,19 +73,19 @@ jobs:
     strategy:
       matrix:
         include:
-          - pkg: ansible-core-git
+#          - pkg: ansible-core-git
           - pkg: assetfinder
-          - pkg: assetfinder-git
-          - pkg: fcct
-          - pkg: fcct-bin
-          - pkg: gnome-shell-extension-public-ip-git
-          - pkg: gnome-shell-extension-workspace-matrix
-          - pkg: google-tsunami-security-scanner
-          - pkg: google-tsunami-security-scanner-git
-          - pkg: google-tsunami-security-scanner-plugins-git
-          - pkg: jmeter-plugins-manager
-          - pkg: obfs4proxy-behind-tor
-          - pkg: tor-browser-behind-tor
+#          - pkg: assetfinder-git
+#          - pkg: fcct
+#          - pkg: fcct-bin
+#          - pkg: gnome-shell-extension-public-ip-git
+#          - pkg: gnome-shell-extension-workspace-matrix
+#          - pkg: google-tsunami-security-scanner
+#          - pkg: google-tsunami-security-scanner-git
+#          - pkg: google-tsunami-security-scanner-plugins-git
+#          - pkg: jmeter-plugins-manager
+#          - pkg: obfs4proxy-behind-tor
+#          - pkg: tor-browser-behind-tor
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v2
