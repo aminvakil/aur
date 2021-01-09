@@ -49,7 +49,7 @@ jobs:
       - name: Execute stuff before makepkg if there is any.
         run: |
           if [ -f ci/"${{ matrix.pkg }}"/before_makepkg.sh ]; then
-              sudo apt install shellcheck && shellcheck ci/"${{ matrix.pkg }}"/before_makepkg.sh
+              shellcheck ci/"${{ matrix.pkg }}"/before_makepkg.sh
               docker exec -i "$(cat ${container_id})" sh < ci/"${{ matrix.pkg }}"/before_makepkg.sh
           fi
 
