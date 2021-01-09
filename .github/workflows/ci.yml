@@ -6,7 +6,7 @@ name: CI
     branches:
       - master
   schedule:
-    - cron: '* * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
 
