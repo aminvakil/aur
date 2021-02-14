@@ -19,6 +19,7 @@ jobs:
           - pkg: ansible-core-git
           - pkg: assetfinder
           - pkg: assetfinder-git
+          - pkg: awx
           - pkg: fcct
           - pkg: fcct-bin
           - pkg: gnome-shell-extension-public-ip-git
@@ -81,6 +82,7 @@ jobs:
           - pkg: ansible-core-git
           - pkg: assetfinder
           - pkg: assetfinder-git
+          - pkg: awx
           - pkg: fcct
           - pkg: fcct-bin
           - pkg: gnome-shell-extension-public-ip-git
