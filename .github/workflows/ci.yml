@@ -22,6 +22,7 @@ jobs:
           - pkg: awx
           - pkg: fcct
           - pkg: fcct-bin
+          - pkg: gnome-shell-extension-dash-to-dock-git
           - pkg: gnome-shell-extension-public-ip-git
           - pkg: gnome-shell-extension-workspace-matrix
           - pkg: google-tsunami-security-scanner
@@ -85,6 +86,7 @@ jobs:
           - pkg: awx
           - pkg: fcct
           - pkg: fcct-bin
+          - pkg: gnome-shell-extension-dash-to-dock-git
           - pkg: gnome-shell-extension-public-ip-git
           - pkg: gnome-shell-extension-workspace-matrix
           - pkg: google-tsunami-security-scanner
