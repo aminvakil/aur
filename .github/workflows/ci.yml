@@ -31,6 +31,7 @@ jobs:
           - pkg: jmeter-plugins-manager
           - pkg: obfs4proxy-behind-tor
           - pkg: tor-browser-behind-tor
+          - pkg: vim-markdown-git
           - pkg: xssmap
     steps:
       - name: Check out the codebase.
@@ -95,6 +96,7 @@ jobs:
           - pkg: jmeter-plugins-manager
           - pkg: obfs4proxy-behind-tor
           - pkg: tor-browser-behind-tor
+          - pkg: vim-markdown-git
           - pkg: xssmap
     steps:
       - name: Check out the codebase.
