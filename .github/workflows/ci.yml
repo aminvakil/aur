@@ -17,6 +17,7 @@ jobs:
       matrix:
         include:
           - pkg: ansible-core-git
+          - pkg: ansible-lint-git
           - pkg: assetfinder
           - pkg: assetfinder-git
           - pkg: awx
@@ -84,6 +85,7 @@ jobs:
       matrix:
         include:
           - pkg: ansible-core-git
+          - pkg: ansible-lint-git
           - pkg: assetfinder
           - pkg: assetfinder-git
           - pkg: awx
