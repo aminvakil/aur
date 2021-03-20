@@ -21,6 +21,7 @@ jobs:
           - pkg: assetfinder
           - pkg: assetfinder-git
           - pkg: awx
+          - pkg: drupal8-git
           - pkg: fcct
           - pkg: fcct-bin
           - pkg: gnome-shell-extension-dash-to-dock-git
@@ -89,6 +90,7 @@ jobs:
           - pkg: assetfinder
           - pkg: assetfinder-git
           - pkg: awx
+          - pkg: drupal8-git
           - pkg: fcct
           - pkg: fcct-bin
           - pkg: gnome-shell-extension-dash-to-dock-git
