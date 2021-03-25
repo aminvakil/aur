@@ -24,6 +24,7 @@ jobs:
         run: |
           CHANGED_DIRS=$(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep PKGBUILD | cut -d / -f 1)
           CHANGED_PKGS=$(echo -n 'name=matrix::{"include":['; while read pkg; do echo -n '{"pkg":'; echo -n "\"$pkg"\"; echo -n "},"; done < ${CHANGED_DIRS} | sed 's/,\([^,]*\)$/\1/'; echo ']}"')
+          echo $CHANGED_PKGS
           echo "::set-output ${CHANGED_PKGS}"
 
   makepkg:
