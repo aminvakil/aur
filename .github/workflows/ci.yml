@@ -4,42 +4,41 @@ name: CI
   pull_request:
   push:
     branches:
-      - master
+      - changed_pkg
   schedule:
     - cron: '0 1 * * *'
 
 jobs:
 
+  changed_pkgs:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.changed-pkgs.outputs.matrix }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: retrieve changed pkgs
+        id: changed-pkgs
+        run: |
+          CHANGED_DIRS=$(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep PKGBUILD | cut -d / -f 1)
+          CHANGED_PKGS=$(echo -n 'name=matrix::{"include":['; while read pkg; do echo -n '{"pkg":'; echo -n "\"$pkg"\"; echo -n "},"; done < ${CHANGED_DIRS} | sed 's/,\([^,]*\)$/\1/'; echo ']}"')
+          echo "::set-output ${CHANGED_PKGS}"
+
   makepkg:
     name: makepkg
     runs-on: ubuntu-latest
     strategy:
-      matrix:
-        include:
-          - pkg: ansible-core-git
-          - pkg: ansible-lint-git
-          - pkg: assetfinder
-          - pkg: assetfinder-git
-          - pkg: awx
-          - pkg: drupal8-git
-          - pkg: fcct
-          - pkg: fcct-bin
-          - pkg: gnome-shell-extension-dash-to-dock-git
-          - pkg: gnome-shell-extension-public-ip-git
-          - pkg: gnome-shell-extension-workspace-matrix
-          - pkg: google-tsunami-security-scanner
-          - pkg: google-tsunami-security-scanner-git
-          - pkg: google-tsunami-security-scanner-plugins-git
-          - pkg: hadolint-git
-          - pkg: jmeter-plugins-manager
-          - pkg: obfs4proxy-behind-tor
-          - pkg: tor-browser-behind-tor
-          - pkg: trivy-git
-          - pkg: vim-markdown-git
-          - pkg: xssmap
+      matrix: ${{fromJson(needs.job1.outputs.matrix)}}
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Retrieve changed_pkgs.
+        run: echo "CHANGED_FILES=$(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep PKGBUILD | cut -d / -f 1)" >> $GITHUB_ENV
 
       - name: Exit if pkg doesn't exist.
         run: if [ ! -d "${{ matrix.pkg }}" ]; then exit 1; fi
