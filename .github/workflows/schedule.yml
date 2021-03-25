@@ -1,0 +1,75 @@
+---
+name: CI
+'on':
+  schedule:
+    - cron: '0 1 * * *'
+
+jobs:
+
+  makepkg:
+    name: makepkg
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - pkg: ansible-core-git
+          - pkg: ansible-lint-git
+          - pkg: assetfinder
+          - pkg: assetfinder-git
+          - pkg: awx
+          - pkg: drupal8-git
+          - pkg: fcct
+          - pkg: fcct-bin
+          - pkg: gnome-shell-extension-dash-to-dock-git
+          - pkg: gnome-shell-extension-public-ip-git
+          - pkg: gnome-shell-extension-workspace-matrix
+          - pkg: google-tsunami-security-scanner
+          - pkg: google-tsunami-security-scanner-git
+          - pkg: google-tsunami-security-scanner-plugins-git
+          - pkg: hadolint-git
+          - pkg: jmeter-plugins-manager
+          - pkg: obfs4proxy-behind-tor
+          - pkg: tor-browser-behind-tor
+          - pkg: trivy-git
+          - pkg: vim-markdown-git
+          - pkg: xssmap
+    steps:
+      - name: Check out the codebase.
+        uses: actions/checkout@v2
+
+      - name: Exit if pkg doesn't exist.
+        run: if [ ! -d "${{ matrix.pkg }}" ]; then exit 1; fi
+
+      - name: Pull devel image.
+        run: docker pull quay.io/aminvakil/archlinux:devel
+
+      - name: Run a container of devel image and mount package on it.
+        run: |
+          container_id=$(mktemp)
+          docker run --detach --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro -v "${PWD}/${{ matrix.pkg }}":/pkg qu
+          echo "container_id=$container_id" >> $GITHUB_ENV
+
+      - name: Execute stuff before makepkg if there is any.
+        run: |
+          if [ -f ci/"${{ matrix.pkg }}"/before_makepkg.sh ]; then
+              shellcheck ci/"${{ matrix.pkg }}"/before_makepkg.sh
+              docker exec -i "$(cat ${container_id})" sh < ci/"${{ matrix.pkg }}"/before_makepkg.sh
+          fi
+
+      - name: Upgrade all packages.
+        run: docker exec "$(cat ${container_id})" pacman -Suy --noconfirm
+
+      - name: Change ownership of package folder
+        run: "docker exec $(cat ${container_id}) chown -R devel: /pkg"
+
+      - name: Install namcap
+        run: docker exec "$(cat ${container_id})" pacman -S namcap --noconfirm
+
+      - name: Namcap!
+        run: if [ ! -f ci/"${{ matrix.pkg }}"/namcap_skip ]; then docker exec "$(cat ${container_id})" su devel sh -
+
+      - name: Makepkg!
+        run: docker exec "$(cat ${container_id})" su devel sh -c "cd /pkg && makepkg -sri --noconfirm"
+
+      - name: Stop and remove container forcefully.
+        run: docker rm -f "$(cat ${container_id})"
