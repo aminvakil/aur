@@ -23,7 +23,7 @@ jobs:
         id: changed-pkgs
         run: |
           CHANGED_DIRS=$(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep PKGBUILD | cut -d / -f 1)
-          CHANGED_PKGS=$(echo -n 'name=matrix::{"include":['; for pkg in ${CHANGED_DIRS}; do echo -n '{"pkg":'; echo -n "\"$pkg"\"; echo -n "},"; done | sed 's/,\([^,]*\)$/\1/'; echo ']}"')
+          CHANGED_PKGS=$(echo -n 'name=matrix::{"include":['; for pkg in ${CHANGED_DIRS}; do echo -n '{"pkg":'; echo -n "\"$pkg"\"; echo -n "},"; done | sed 's/,\([^,]*\)$/\1/'; echo ']}')
           echo $CHANGED_PKGS
           echo "::set-output ${CHANGED_PKGS}"
 
