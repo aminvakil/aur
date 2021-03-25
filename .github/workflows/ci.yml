@@ -23,7 +23,6 @@ jobs:
         id: changed-pkgs
         run: |
           CHANGED_DIRS=$(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep PKGBUILD | cut -d / -f 1)
-          CHANGED_DIRS="assetfinder"
           CHANGED_PKGS=$(for pkg in ${CHANGED_DIRS}; do echo -n '{"pkg":'; echo -n "\"$pkg"\"; echo -n "},"; done | sed 's/,\([^,]*\)$/\1/';)
           echo $CHANGED_PKGS
           echo "::set-output name=matrix::{\"include\":[${CHANGED_PKGS}]}"
@@ -37,11 +36,6 @@ jobs:
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      - name: Retrieve changed_pkgs.
-        run: echo "CHANGED_FILES=$(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep PKGBUILD | cut -d / -f 1)" >> $GITHUB_ENV
 
       - name: Exit if pkg doesn't exist.
         run: if [ ! -d "${{ matrix.pkg }}" ]; then exit 1; fi
