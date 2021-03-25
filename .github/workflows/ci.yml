@@ -32,7 +32,7 @@ jobs:
     name: makepkg
     runs-on: ubuntu-latest
     strategy:
-      matrix: ${{fromJson(needs.job1.outputs.matrix)}}
+      matrix: ${{fromJson(needs.changed_pkgs.outputs.matrix)}}
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v2
