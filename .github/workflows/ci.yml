@@ -29,6 +29,7 @@ jobs:
           echo "::set-output name=matrix::{\"include\":[${CHANGED_PKGS}]}"
 
   makepkg:
+    needs: changed_pkgs
     name: makepkg
     runs-on: ubuntu-latest
     strategy:
