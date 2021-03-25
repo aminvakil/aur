@@ -3,7 +3,7 @@
 
 pkgname=assetfinder
 pkgver=0.1.1
-pkgrel=4
+pkgrel=5
 pkgdesc="Find domains and subdomains related to a given domain"
 arch=('i686' 'x86_64')
 url="https://github.com/tomnomnom/assetfinder"
