@@ -1,6 +1,6 @@
 pkgbase = hadolint-git
 	pkgdesc = Dockerfile linter, validate inline bash, written in Haskell
-	pkgver = r905.dc61382
+	pkgver = 2.1.0.r0.g85a5357
 	pkgrel = 1
 	url = Dockerfile linter, validate inline bash, written in Haskell
 	arch = any
