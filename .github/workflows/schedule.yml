@@ -17,6 +17,7 @@ jobs:
           - pkg: assetfinder
           - pkg: assetfinder-git
           - pkg: awx
+          - pkg: butane
           - pkg: drupal8-git
           - pkg: fcct
           - pkg: fcct-bin
