@@ -73,5 +73,12 @@ jobs:
       - name: Makepkg!
         run: docker exec "$(cat ${container_id})" su devel sh -c "cd /pkg && makepkg -sri --noconfirm"
 
+      - name: Execute stuff after makepkg if there is any.
+        run: |
+          if [ -f ci/"${{ matrix.pkg }}"/after_makepkg.sh ]; then
+              shellcheck ci/"${{ matrix.pkg }}"/after_makepkg.sh
+              docker exec -i "$(cat ${container_id})" sh < ci/"${{ matrix.pkg }}"/after_makepkg.sh
+          fi
+
       - name: Stop and remove container forcefully.
         run: docker rm -f "$(cat ${container_id})"
