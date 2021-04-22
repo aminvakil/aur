@@ -20,8 +20,6 @@ jobs:
           - pkg: butane
           - pkg: butane-bin
           - pkg: drupal8-git
-          - pkg: fcct
-          - pkg: fcct-bin
           - pkg: gnome-shell-extension-dash-to-dock-git
           - pkg: gnome-shell-extension-public-ip-git
           - pkg: gnome-shell-extension-workspace-matrix
