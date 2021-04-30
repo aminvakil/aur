@@ -11,6 +11,7 @@ pkgbase = ansible-core-git
 	depends = python-yaml
 	depends = python-paramiko
 	depends = python-jinja
+	depends = python-resolvelib
 	optdepends = sshpass: for ssh connections with password
 	optdepends = python-passlib: crypt values for vars_prompt
 	optdepends = python-netaddr: for the ipaddr filter
