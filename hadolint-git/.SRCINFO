@@ -7,7 +7,6 @@ pkgbase = hadolint-git
 	license = GPL
 	makedepends = git
 	makedepends = stack
-	makedepends = libgmp-static
 	provides = hadolint
 	source = git+https://github.com/hadolint/hadolint.git
 	sha256sums = SKIP

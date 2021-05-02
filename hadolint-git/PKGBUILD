@@ -11,7 +11,7 @@ license=('GPL')
 source=('git+https://github.com/hadolint/hadolint.git')
 sha256sums=('SKIP')
 arch=('any')
-makedepends=('git' 'stack' 'libgmp-static')
+makedepends=('git' 'stack')
 provides=('hadolint')
 
 pkgver() {
@@ -27,7 +27,7 @@ package() {
   cd "${srcdir}/${_pkgname}"
 
   # Build
-  stack build hadolint
+  stack build hadolint --flag hadolint:-static
 
   # Install the program.
   install -Dm755 .stack-work/install/*/*/*/bin/hadolint "${pkgdir}/usr/bin/hadolint"
