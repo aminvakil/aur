@@ -29,7 +29,6 @@ jobs:
           - pkg: hadolint-git
           - pkg: jmeter-plugins-manager
           - pkg: obfs4proxy-behind-tor
-          - pkg: python-ansible-toolbox
           - pkg: tor-browser-behind-tor
           - pkg: trivy-git
           - pkg: vim-markdown-git
