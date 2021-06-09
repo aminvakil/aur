@@ -150,8 +150,8 @@ package() {
 		"${pkgdir}/usr/share/icons/hicolor/scalable/apps" \
 		"${pkgdir}/usr/share/icons/hicolor/128x128/apps"
 
-	install -Dm 644 "${pkgname}.png" "${pkgdir}/usr/share/icons/hicolor/scalable/apps/${pkgname}.png"
-	install -Dm 644 "${pkgname}.svg" "${pkgdir}/usr/share/icons/hicolor/128x128/apps/${pkgname}.svg"
+	install -Dm 644 "tor-browser.png" "${pkgdir}/usr/share/icons/hicolor/scalable/apps/tor-browser.png"
+	install -Dm 644 "tor-browser.svg" "${pkgdir}/usr/share/icons/hicolor/128x128/apps/tor-browser.svg"
 
 	install -dm755 "${pkgdir}/usr/share/applications"
 	sed "${_sed_subst}" "${_pkgname}.desktop.in" > \
