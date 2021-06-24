@@ -8,7 +8,7 @@ pkgbase = ansible-lint-git
 	checkdepends = python-pytest
 	makedepends = git
 	makedepends = python-setuptools
-	makedepends = python-setuptools_scm
+	makedepends = python-setuptools-scm
 	makedepends = python-toml
 	depends = python
 	depends = python-ruamel-yaml
@@ -28,4 +28,3 @@ pkgbase = ansible-lint-git
 	sha256sums = SKIP
 
 pkgname = ansible-lint-git
-
