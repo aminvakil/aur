@@ -7,7 +7,7 @@ pkgbase = freefilesync
 	arch = x86_64
 	license = GPL3
 	makedepends = unzip
-	depends = wxgtk
+	depends = wxgtk2
 	depends = curl
 	depends = lsb-release
 	source = FreeFileSync_11.4_Source.zip::https://freefilesync.org/download/FreeFileSync_11.4_Source.zip
@@ -30,4 +30,3 @@ pkgbase = freefilesync
 	sha256sums = 1649e7ea66235c6f82daf9beb6b61b7765df54e9ef70f7f6fc1283f5c2b1e54a
 
 pkgname = freefilesync
-
