@@ -19,6 +19,7 @@ jobs:
           - pkg: awx
           - pkg: butane
           - pkg: butane-bin
+          - pkg: docker-bench-security
           - pkg: drupal8-git
           - pkg: gnome-shell-extension-dash-to-dock-git
           - pkg: gnome-shell-extension-public-ip-git
