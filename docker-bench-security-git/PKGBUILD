@@ -6,6 +6,8 @@ pkgdesc="Check common best-practices around deploying Docker container"
 arch=('any')
 url="https://github.com/docker/docker-bench-security"
 license=('Apache')
+conflicts=('docker-bench-security')
+provides=('docker-bench-security')
 source=("git+$url.git"
         "${pkgname/-git/}-exec.sh")
 depends=(docker)
