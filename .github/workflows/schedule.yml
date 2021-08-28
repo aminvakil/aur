@@ -34,6 +34,7 @@ jobs:
           - pkg: trivy-git
           - pkg: vim-markdown-git
           - pkg: xssmap
+          - pkg: zoiper
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v2
