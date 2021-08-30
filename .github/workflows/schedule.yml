@@ -12,6 +12,7 @@ jobs:
     strategy:
       matrix:
         include:
+          - pkg: actionlint
           - pkg: ansible-core-git
           - pkg: ansible-lint-git
           - pkg: assetfinder
