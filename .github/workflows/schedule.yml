@@ -22,6 +22,7 @@ jobs:
           - pkg: butane-bin
           - pkg: docker-bench-security
           - pkg: docker-bench-security-git
+          - pkg: docker-prune
           - pkg: drupal8-git
           - pkg: gnome-shell-extension-dash-to-dock-git
           - pkg: gnome-shell-extension-public-ip-git
