@@ -1,7 +1,7 @@
 pkgbase = pumba-bin
 	pkgdesc = Chaos testing, network emulation and stress testing tool for containers
 	pkgver = 0.7.8
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/alexei-led/pumba
 	arch = aarch64
 	arch = x86_64
