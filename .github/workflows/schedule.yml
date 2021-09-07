@@ -33,6 +33,7 @@ jobs:
           - pkg: hadolint-git
           - pkg: jmeter-plugins-manager
           - pkg: pumba
+          - pkg: pumba-bin
           - pkg: thelounge-beta
           - pkg: trivy-git
           - pkg: vim-markdown-git
