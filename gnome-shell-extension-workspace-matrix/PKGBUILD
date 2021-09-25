@@ -17,7 +17,7 @@ sha256sums=('d2c4048e9a265657c061899ace821309e6c2639912532500317cd4b020338a98')
 _uuid=wsmatrix@martin.zurowietz.de
 
 package() {
-  cd ${_repo}-${pkgver}/${_uuid}
+  cd ${_repo}-${_pkgver}/${_uuid}
   install -Dm644 metadata.json settings.ui *.js -t "${pkgdir}/usr/share/gnome-shell/extensions/${_uuid}/"
   install -Dm644 "schemas/org.gnome.shell.extensions.wsmatrix.gschema.xml" -t "${pkgdir}/usr/share/glib-2.0/schemas/"
 }
