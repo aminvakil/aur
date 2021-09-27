@@ -52,13 +52,13 @@ jobs:
           fi
 
       - name: Upgrade all packages.
-        run: docker exec "$(cat ${container_id})" pacman -Suy --noconfirm
+        run: docker exec "$(cat ${container_id})" pacman -Syu --noconfirm
 
       - name: Change ownership of package folder
         run: "docker exec $(cat ${container_id}) chown -R devel: /pkg"
 
       - name: Install namcap
-        run: docker exec "$(cat ${container_id})" pacman -S namcap --noconfirm
+        run: docker exec "$(cat ${container_id})" pacman -Syu namcap --noconfirm
 
       - name: Namcap!
         run: if [ ! -f ci/"${{ matrix.pkg }}"/namcap_skip ]; then docker exec "$(cat ${container_id})" su devel sh -c "cd /pkg && namcap PKGBUILD"; fi
@@ -97,7 +97,7 @@ jobs:
           echo "container_id=$container_id" >> $GITHUB_ENV
 
       - name: Install aurpublish
-        run: docker exec "$(cat ${container_id})" pacman -S aurpublish --noconfirm
+        run: docker exec "$(cat ${container_id})" pacman -Syu aurpublish --noconfirm
 
       - name: Configure ssh config
         run: |
