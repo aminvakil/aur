@@ -15,7 +15,6 @@ sha256sums=('43fe5080531be2d77678504f1a12c4475980046cca89cb3d7b111c44503f7786')
 
 _uuid=wsmatrix@martin.zurowietz.de
 
-
 package() {
   cd ${_repo}-${pkgver}/${_uuid}
   install -Dm644 metadata.json settings.ui *.js -t "${pkgdir}/usr/share/gnome-shell/extensions/${_uuid}/"
