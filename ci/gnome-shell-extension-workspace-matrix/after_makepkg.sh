@@ -1,4 +1,4 @@
 #!/bin/sh
-sudo pacman -S xorg-server-xvfb --noconfirm
-Xvfb %I -screen 0 1600x900x24 -fbdir /opt
+sudo pacman -S x11vnc --noconfirm
+x11vnc -display :0
 gnome-extensions enable wsmatrix@martin.zurowietz.de
