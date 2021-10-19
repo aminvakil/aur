@@ -14,8 +14,10 @@ license=('custom')
 depends=('gtk2' 'libnotify' 'libxss' 'v4l-utils')
 options=('!strip')
 _srcfil="${pkgname^}${pkgver%%.*}_${pkgver}_${CARCH:-}.tar.xz"
+_url='https://www.zoiper.com/en/voip-softphone/download/zoiper5/for/linux'
+DLAGENTS=("https::/usr/bin/curl --header Cookie:\ PHPSESSID= -fLJ --retry 3 --retry-delay 3 -o %o %u")
 source=(
-  "file://${_srcfil}"
+  "${_srcfil}"::"${_url}"
   'LICENSE' "${pkgname}.desktop" "${pkgname}.png" "${pkgname}-24.png" "${pkgname}-48.png" "${pkgname}-96.png"
 )
 source+=('zoipdl.sh')
@@ -39,11 +41,6 @@ sha256sums=('15381acf015a2feeb3db198c6a9a57fd330aec02c3a1537fff92c6776f46fb0a'
             '68627904f73617d145a91439f267f5c43d95f9dac10a3d4a8069b5460ddb3c8c')
 PKGEXT='.pkg.tar.gz'
 
-_url='https://www.zoiper.com/en/voip-softphone/download/zoiper5/for/linux'
-if [ ! -f "$_srcfil" ]
-then
-  curl "$_url" --header 'Cookie: PHPSESSID=' -f -J -o "$_srcfil"
-fi
 
 package() {
   set -u
