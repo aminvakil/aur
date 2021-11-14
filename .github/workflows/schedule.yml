@@ -21,6 +21,7 @@ jobs:
           - pkg: butane
           - pkg: butane-bin
           - pkg: ddosify
+          - pkg: ddosify-git
           - pkg: docker-bench-security
           - pkg: docker-bench-security-git
           - pkg: docker-prune
