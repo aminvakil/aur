@@ -20,6 +20,7 @@ jobs:
           - pkg: awx
           - pkg: butane
           - pkg: butane-bin
+          - pkg: ddosify
           - pkg: docker-bench-security
           - pkg: docker-bench-security-git
           - pkg: docker-prune
