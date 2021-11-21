@@ -28,6 +28,7 @@ jobs:
           - pkg: dockle
           - pkg: drupal8-git
           - pkg: dstp
+          - pkg: dstp-git
           - pkg: gnome-shell-extension-dash-to-dock-git
           - pkg: gnome-shell-extension-public-ip-git
           - pkg: gnome-shell-extension-workspace-matrix
