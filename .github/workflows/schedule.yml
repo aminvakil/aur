@@ -39,6 +39,7 @@ jobs:
           - pkg: jmeter-plugins-manager
           - pkg: pumba
           - pkg: pumba-bin
+          - pkg: python-spotdl
           - pkg: thelounge-beta
           - pkg: trivy-git
           - pkg: vim-markdown-git
