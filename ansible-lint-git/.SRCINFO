@@ -18,7 +18,6 @@ pkgbase = ansible-lint-git
 	depends = python-packaging
 	depends = python-wcmatch
 	depends = python-enrich
-	depends = python-tenacity
 	depends = ansible-core
 	depends = yamllint
 	depends = python-ansible-compat
