@@ -13,6 +13,7 @@ jobs:
       matrix:
         include:
           - pkg: actionlint
+          - pkg: ansible-cmdb
           - pkg: ansible-core-git
           - pkg: ansible-lint-git
           - pkg: assetfinder
