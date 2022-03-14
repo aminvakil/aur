@@ -1,4 +1,4 @@
 #!/bin/sh
-set -euxo pipefail
+set -eux
 pacman -Suy tor --noconfirm
 systemctl start tor
