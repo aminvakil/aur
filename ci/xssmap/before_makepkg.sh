@@ -1,5 +1,5 @@
 #!/bin/sh
-set -euxo pipefail
+set -eux
 pacman -Suy git --noconfirm
 git clone https://aur.archlinux.org/phantomjs.git
 chown -R devel: phantomjs

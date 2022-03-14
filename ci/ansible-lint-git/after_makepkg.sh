@@ -1,3 +1,3 @@
 #!/bin/sh
-set -euxo pipefail
+set -eux
 ansible-lint --version
