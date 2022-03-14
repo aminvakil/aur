@@ -1,5 +1,5 @@
 #!/bin/sh
-set -Eeuxo pipefail
+set -euxo pipefail
 pacman -Syu git --noconfirm
 git clone https://aur.archlinux.org/golangci-lint.git
 chown -R devel: golangci-lint
