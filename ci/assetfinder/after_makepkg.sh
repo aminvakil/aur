@@ -1,3 +1,3 @@
 #!/bin/sh
-set -Eeuxo pipefail
+set -euxo pipefail
 assetfinder --help

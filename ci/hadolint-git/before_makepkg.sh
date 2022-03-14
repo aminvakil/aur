@@ -1,5 +1,5 @@
 #!/bin/sh
-set -Eeuxo pipefail
+set -euxo pipefail
 sed -i "/\[testing\]/,/Include/"'s/^#//' /etc/pacman.conf
 sed -i "/\[community-testing\]/,/Include/"'s/^#//' /etc/pacman.conf
 pacman -Syu --noconfirm

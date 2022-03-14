@@ -1,4 +1,4 @@
 #!/bin/sh
-set -Eeuxo pipefail
+set -euxo pipefail
 ddosify --version
 ddosify -t hack.me
