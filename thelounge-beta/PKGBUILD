@@ -39,6 +39,8 @@ prepare() {
 }
 
 check() {
+    yarn add npm-run-all --cache-folder "$srcdir/yarn-cache"
+    yarn format:prettier
     yarn test
 }
 
