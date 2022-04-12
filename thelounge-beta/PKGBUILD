@@ -38,6 +38,10 @@ prepare() {
     yarn install --prod --frozen-lockfile --non-interactive --ignore-scripts --cache-folder "$srcdir/yarn-cache"
 }
 
+check() {
+    yarn test
+}
+
 build() {
     mkdir _build
     cp package.json yarn.lock _build
