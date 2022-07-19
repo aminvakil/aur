@@ -40,7 +40,7 @@ jobs:
           - pkg: jmeter-plugins-manager
           - pkg: pumba
           - pkg: pumba-bin
-          - pkg: ravro_dcrp-git
+          - pkg: ravro_dcrpt-git
           # - pkg: python-spotdl
           - pkg: thelounge-beta
           - pkg: trivy-git
