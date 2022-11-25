@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -eux
 pacman -Syu git --noconfirm
 for i in {qt5-webkit,wkhtmltopdf}; do
