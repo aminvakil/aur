@@ -26,7 +26,7 @@ jobs:
           - pkg: docker-bench-security
           - pkg: docker-bench-security-git
           - pkg: docker-prune
-          - pkg: dockle
+          # - pkg: dockle
           - pkg: drupal8-git
           - pkg: dstp
           - pkg: dstp-git
