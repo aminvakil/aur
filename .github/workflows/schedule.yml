@@ -41,7 +41,7 @@ jobs:
           # - pkg: pumba
           - pkg: pumba-bin
           - pkg: ravro_dcrpt-git
-          - pkg: python-spotdl
+          # - pkg: python-spotdl
           - pkg: thelounge-beta
           - pkg: trivy-git
           - pkg: vim-markdown-git
