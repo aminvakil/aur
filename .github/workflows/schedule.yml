@@ -27,7 +27,6 @@ jobs:
           - pkg: docker-bench-security-git
           - pkg: docker-prune
           # - pkg: dockle
-          - pkg: drupal8-git
           - pkg: dstp
           - pkg: dstp-git
           - pkg: gnome-shell-extension-dash-to-dock-git
