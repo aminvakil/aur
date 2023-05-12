@@ -44,6 +44,7 @@ jobs:
           - pkg: thelounge-beta
           - pkg: trivy-git
           - pkg: vim-markdown-git
+          - pkg: vim-pkgbuild-git
           - pkg: zoiper
     steps:
       - name: Check out the codebase.
