@@ -22,11 +22,6 @@ build() {
   make
 }
 
-test() {
-  cd "$pkgname-$pkgver"
-  make test-coverage
-}
-
 package() {
   cd "$pkgname-$pkgver"
   make release
