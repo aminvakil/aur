@@ -1,7 +1,7 @@
 pkgbase = docker-prune
 	pkgdesc = Remove unused docker data which has not been accessed in last 10 days
 	pkgver = 1.0.0
-	pkgrel = 1
+	pkgrel = 2
 	arch = any
 	license = GPL3
 	depends = docker
