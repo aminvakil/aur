@@ -44,7 +44,7 @@ jobs:
           - pkg: python-bandcamp-api-git
           - pkg: python-spotdl
           - pkg: thelounge-beta
-          - pkg: trivy-git
+          # - pkg: trivy-git
           - pkg: vim-markdown-git
           - pkg: vim-pkgbuild-git
           - pkg: zoiper
