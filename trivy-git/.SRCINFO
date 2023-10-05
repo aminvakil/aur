@@ -14,7 +14,8 @@ pkgbase = trivy-git
 	provides = trivy
 	conflicts = trivy
 	source = git+https://github.com/aquasecurity/trivy.git
+	source = https://github.com/aquasecurity/trivy/pull/5339.patch
 	sha256sums = SKIP
+	sha256sums = 61ceb690273f4a49ce350b2aacccf745701d10690e81dd125ca5d326ba01c2d8
 
 pkgname = trivy-git
-

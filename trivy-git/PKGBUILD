@@ -14,14 +14,20 @@ optdepends=("rpm: RHEL/CentOS based image support")
 makedepends=("go" "btrfs-progs" "git")
 provides=('trivy')
 conflicts=('trivy')
-source=("git+${url}.git")
-sha256sums=('SKIP')
+source=("git+${url}.git"
+"https://github.com/aquasecurity/trivy/pull/5339.patch")
+sha256sums=('SKIP' '61ceb690273f4a49ce350b2aacccf745701d10690e81dd125ca5d326ba01c2d8')
 
 pkgver() {
   cd "${srcdir}/${_pkgname}"
 
   # Get the version number.
   printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+  cd "${srcdir}/${_pkgname}"
+  patch --forward --strip=1 --input=../../5339.patch
 }
 
 build() {
