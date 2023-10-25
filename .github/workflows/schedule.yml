@@ -14,7 +14,7 @@ jobs:
         include:
           - pkg: actionlint
           - pkg: actionlint-git
-          # - pkg: ansible-cmdb
+          - pkg: ansible-cmdb
           - pkg: ansible-core-git
           - pkg: ansible-lint-git
           - pkg: assetfinder
