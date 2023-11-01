@@ -12,7 +12,6 @@ jobs:
     strategy:
       matrix:
         include:
-          - pkg: actionlint
           - pkg: actionlint-git
           # - pkg: ansible-cmdb
           - pkg: ansible-core-git
