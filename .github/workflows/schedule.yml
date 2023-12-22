@@ -46,7 +46,7 @@ jobs:
           - pkg: trivy-git
           - pkg: vim-markdown-git
           - pkg: vim-pkgbuild-git
-          - pkg: zoiper
+          - pkg: zoiper-bin
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v3
