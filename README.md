@@ -1,3 +1,3 @@
-![CI](https://github.com/aminvakil/aur/workflows/CI/badge.svg)
+![Nightly CI](https://github.com/aminvakil/aur/actions/workflows/schedule.yml/badge.svg)
 
 AUR Packages (https://aur.archlinux.org/account/aminvakil)
