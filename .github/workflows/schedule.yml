@@ -34,7 +34,7 @@ jobs:
           - pkg: gnome-shell-extension-workspace-matrix
           - pkg: google-tsunami-security-scanner
           - pkg: google-tsunami-security-scanner-git
-          - pkg: google-tsunami-security-scanner-plugins-git
+          # - pkg: google-tsunami-security-scanner-plugins-git
           # - pkg: hadolint-git
           - pkg: jmeter-plugins-manager
           # - pkg: pumba
