@@ -38,6 +38,6 @@ pkgbase = spotdl
 	conflicts = python-spotdl
 	replaces = python-spotdl
 	source = spotdl-4.2.5.tar.gz::https://github.com/spotDL/spotify-downloader/archive/v4.2.5.tar.gz
-	b2sums = e7b1ba0c7bebceb0d78ea0b4974b7a2a46612f03a3b3e457f8f996d68b9b23df0c199448956ad5f4398effbe5d59d51c43c310f998a8d4798d07bb89f6c51a5d
+	b2sums = cb45720745936cb4e14fb121e34871614e5be4bdc10f0c23058f979dfd788dd7da06ceb3cc633c93fb7bf799080256f718e29f8ff30fba275be9c6c3f9eae2ca
 
 pkgname = spotdl
