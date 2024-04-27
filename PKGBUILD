@@ -7,7 +7,7 @@
 
 pkgname=spotdl
 pkgver=4.2.5
-pkgrel=4
+pkgrel=5
 
 pkgdesc='Download your Spotify playlists and songs along with album art and metadata (from YouTube if a match is found).'
 arch=('any')
@@ -36,7 +36,7 @@ depends=(
 	'python-slugify'
 	'python-spotipy'
 	'python-syncedlyrics'
-	'python-typing-extensions'
+	'python-typing_extensions'
 	'python-ytmusicapi'
 	'uvicorn'
 	'yt-dlp'
