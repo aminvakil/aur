@@ -1,6 +1,6 @@
 pkgbase = ansible-core-git
 	pkgdesc = Radically simple IT automation platform
-	pkgver = r54176.fa92228b506
+	pkgver = r54368.802e95f5808
 	pkgrel = 1
 	url = https://github.com/ansible/ansible
 	arch = any
@@ -16,7 +16,7 @@ pkgbase = ansible-core-git
 	depends = python-paramiko
 	depends = python-jinja
 	depends = python-resolvelib
-	depends = python-typing-extensions
+	depends = python-typing_extensions
 	optdepends = sshpass: for ssh connections with password
 	optdepends = python-passlib: crypt values for vars_prompt
 	optdepends = python-netaddr: for the ipaddr filter
