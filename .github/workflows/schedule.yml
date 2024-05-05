@@ -16,13 +16,13 @@ jobs:
           # - pkg: ansible-cmdb
           - pkg: ansible-core-git
           - pkg: ansible-lint-git
+          - pkg: anteon
+          - pkg: anteon-git
           - pkg: assetfinder
           - pkg: assetfinder-git
           - pkg: awx
           - pkg: butane
           - pkg: butane-bin
-          # - pkg: ddosify
-          # - pkg: ddosify-git
           - pkg: docker-bench-security
           - pkg: docker-bench-security-git
           - pkg: docker-prune
