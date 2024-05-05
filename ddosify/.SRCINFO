@@ -2,12 +2,12 @@ pkgbase = ddosify
 	pkgdesc = High-performance load testing tool
 	pkgver = 1.0.6
 	pkgrel = 1
-	url = https://github.com/ddosify/ddosify
+	url = https://github.com/getanteon/anteon
 	arch = any
 	license = AGPL3
 	makedepends = go
 	makedepends = git
-	source = ddosify-1.0.6-1.tar.gz::https://github.com/ddosify/ddosify/archive/refs/tags/v1.0.6.tar.gz
-	sha256sums = e390840c5a56ce3131300fbdf8b817427aac4a785debbd7c4c8cd53ab828048a
+	source = ddosify-1.0.6-1.tar.gz::https://github.com/getanteon/anteon/archive/refs/tags/v1.0.6.tar.gz
+	sha256sums = 99b24969392d0e3e84ec8ae5bea73cf5b0951a2161d387d492a3788aef0d8370
 
 pkgname = ddosify
