@@ -1,7 +1,7 @@
 pkgbase = tls-client-git
 	pkgdesc = Go module and shared library providing a TLS Client is built upon https://github.com/Carcraftz/fhttp and https://github.com/Carcraftz/utls.
 	pkgver = 1.7.5+3.r262.20240513.077a497
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/bogdanfinn/tls-client
 	arch = aarch64
 	arch = amd64

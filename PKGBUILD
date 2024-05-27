@@ -12,7 +12,7 @@ pkgbase="${_pkgbase}-git"
 pkgname=("golang-${_gitservice}-${_gitauthor}-${_pkgbase}-git" "lib-${_pkgbase}-git")
 pkgver=1.7.5+3.r262.20240513.077a497
 _releasever="$(awk -F. '{print $1"."$2"."$3}' <<<"${pkgver}")"
-pkgrel=1
+pkgrel=2
 pkgdesc="Go module and shared library providing a TLS Client is built upon https://github.com/Carcraftz/fhttp and https://github.com/Carcraftz/utls."
 arch=(
   'aarch64'
@@ -121,17 +121,16 @@ package_golang-github-bogdanfinn-tls-client-git() {
     'golang-tls-client-git'
     'golang-bogdanfinn-tls-client-git'
   )
-
   cd "${srcdir}/${_pkgbase}"
-
   install -d -v -m755 "${pkgdir}/usr/share/gocode/src/${_gitserver}/${_gitauthor}/${_gitproject}"
-  cp -rv *.go *.mod *.sum cffi_src cffi_dist shared tests  "${pkgdir}/usr/share/gocode/src/${_gitserver}/${_gitauthor}/${_gitproject}"/
+  cp -rv *.go *.mod *.sum cffi_src cffi_dist tests  "${pkgdir}/usr/share/gocode/src/${_gitserver}/${_gitauthor}/${_gitproject}"/
   if [ -e "test-all.sh" ]; then
     install -D -v -m775 test-all.sh                        "${pkgdir}/usr/share/gocode/src/${_gitserver}/${_gitauthor}/${_gitproject}"/test-all.sh
   fi
-  rm -rv "${pkgdir}/usr/share/gocode/src/${_gitserver}/${_gitauthor}/${_gitproject}"/cffi_dist/{*.so,*.h,dist,Dockerfile*,example*}
+  rm -rv "${pkgdir}/usr/share/gocode/src/${_gitserver}/${_gitauthor}/${_gitproject}"/cffi_dist/{*.so,*.h,Dockerfile*,example*}
 
   for _docfile in "Readme.md"; do
+    echo "SECHS"
     install -D -v -m644 "${_docfile}"                      "${pkgdir}/usr/share/doc/golang-github-bogdanfinn-tls-client/${_docfile}"
   done
   install -D -v -m644 "${srcdir}/git.log"                  "${pkgdir}/usr/share/doc/golang-github-bogdanfinn-tls-client/git.log"
