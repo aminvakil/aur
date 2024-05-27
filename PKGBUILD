@@ -10,7 +10,7 @@ _gitproject="${_pkgbase}"
 
 pkgbase="${_pkgbase}-git"
 pkgname=("golang-${_gitservice}-${_gitauthor}-${_pkgbase}-git" "lib-${_pkgbase}-git")
-pkgver=1.3.5.r168.20230224.ec493f9
+pkgver=1.7.5+3.r262.20240513.077a497
 _releasever="$(awk -F. '{print $1"."$2"."$3}' <<<"${pkgver}")"
 pkgrel=1
 pkgdesc="Go module and shared library providing a TLS Client is built upon https://github.com/Carcraftz/fhttp and https://github.com/Carcraftz/utls."
