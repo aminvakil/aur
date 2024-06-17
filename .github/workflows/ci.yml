@@ -42,7 +42,7 @@ jobs:
       - name: Run a container of devel image and mount package on it.
         run: |
           container_id=$(mktemp)
-          docker run --detach --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro -v "${PWD}/${{ matrix.pkg }}":/pkg quay.io/aminvakil/archlinux:devel > "${container_id}"
+          docker run --detach --privileged --cgroup-parent=docker.slice --cgroupns private --tmpfs /tmp --tmpfs /run --tmpfs /run/lock -v "${PWD}/${{ matrix.pkg }}":/pkg quay.io/aminvakil/archlinux:devel > "${container_id}"
           echo "container_id=$container_id" >> $GITHUB_ENV
 
       - name: Execute stuff before makepkg if there is any.
