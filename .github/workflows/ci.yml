@@ -94,7 +94,7 @@ jobs:
       - name: Run a container of base image and mount repository on it.
         run: |
           container_id=$(mktemp)
-          docker run --detach --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro quay.io/aminvakil/archlinux:latest > "${container_id}"
+          docker run --detach --privileged --cgroup-parent=docker.slice --cgroupns private --tmpfs /tmp --tmpfs /run --tmpfs /run/lock quay.io/aminvakil/archlinux:latest > "${container_id}"
           echo "container_id=$container_id" >> $GITHUB_ENV
 
       - name: Install aurpublish
