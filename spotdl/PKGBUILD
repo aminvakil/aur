@@ -7,8 +7,7 @@
 
 pkgname=spotdl
 pkgver=4.2.5
-pkgrel=5
-
+pkgrel=6
 pkgdesc='Download your Spotify playlists and songs along with album art and metadata (from YouTube if a match is found).'
 arch=('any')
 url='https://github.com/spotDL/spotify-downloader'
@@ -47,13 +46,20 @@ provides=('python-spotdl')
 replaces=('python-spotdl')
 conflicts=('python-spotdl')
 
-source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-b2sums=('cb45720745936cb4e14fb121e34871614e5be4bdc10f0c23058f979dfd788dd7da06ceb3cc633c93fb7bf799080256f718e29f8ff30fba275be9c6c3f9eae2ca')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz"
+        "$pkgname-2120.patch::$url/pull/2120.patch")
+b2sums=('cb45720745936cb4e14fb121e34871614e5be4bdc10f0c23058f979dfd788dd7da06ceb3cc633c93fb7bf799080256f718e29f8ff30fba275be9c6c3f9eae2ca'
+        '2ea10536e919bb94f2ca743d2b893698e7635d19cb18786d5af98d6762c36405275df8a15e090e8394d5e2bf0b3f2aee4444d75383b5fb926f2557ecc217243b')
+
+prepare() {
+	cd "spotify-downloader-$pkgver"
+	# fix python-syncedlyrics 1.0.0 compatibility
+	patch -Np1 -i "../$pkgname-2120.patch"
+}
 
 # Document: https://wiki.archlinux.org/title/Python_package_guidelines
 build() {
 	cd spotify-downloader-$pkgver
-	# https://github.com/python-poetry/poetry/issues/5547
 	python -m build --wheel --no-isolation
 }
 
