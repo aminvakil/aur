@@ -15,7 +15,7 @@ jobs:
           - pkg: actionlint-git
           - pkg: android-sdk-build-tools
           # - pkg: ansible-cmdb
-          - pkg: ansible-core-git
+          # - pkg: ansible-core-git
           - pkg: ansible-lint-git
           - pkg: anteon
           - pkg: anteon-git
