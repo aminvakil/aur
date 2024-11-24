@@ -15,10 +15,10 @@ backup=("etc/conf.d/$pkgname")
 install='package.install'
 options=('!lto')
 source=(
-  'git+${url}.git'
-  'systemd.service'
-  'sysusers.conf'
-  'config.env'
+  "git+${url}.git"
+  "systemd.service"
+  "sysusers.conf"
+  "config.env"
 )
 provides=('prometheus-snmp-exporter')
 conflicts=('prometheus-snmp-exporter')
