@@ -30,5 +30,5 @@ test() {
 package() {
   cd "$pkgname-$pkgver"
   make release
-  install -Dm755 .bin/github.com/alexei-led/${pkgname}_linux_amd64 "$pkgdir"/usr/bin/$pkgname
+  install -Dm755 .bin/${pkgname}_linux_amd64 "$pkgdir"/usr/bin/$pkgname
 }
