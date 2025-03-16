@@ -18,7 +18,7 @@ build() {
   export CGO_CFLAGS="${CFLAGS}"
   export CGO_CXXFLAGS="${CXXFLAGS}"
   export CGO_LDFLAGS="${LDFLAGS}"
-  export GOFLAGS="-trimpath -ldflags=-modcacherw"
+  export GOFLAGS="-trimpath"
   make
 }
 
