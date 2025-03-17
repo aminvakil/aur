@@ -1,7 +1,7 @@
 # Maintainer: Amin Vakil <info AT aminvakil DOT com>
 
 pkgname=pumba
-pkgver=0.11.1
+pkgver=0.11.5
 pkgrel=1
 pkgdesc="Chaos testing, network emulation and stress testing tool for containers"
 arch=('x86_64')
@@ -10,7 +10,7 @@ license=('Apache')
 makedepends=('go' 'git')
 checkdepends=('golangci-lint')
 source=("${pkgname}-${pkgver}-${pkgrel}.tar.gz::$url/archive/refs/tags/$pkgver.tar.gz")
-sha256sums=('8a62f47e46fa1cb6b58d3fdd6606ecce5f59455b9431ecbf7ff7e1b541e0348b')
+sha256sums=('793c59b52d529c1f6f1811b7ab9310b10ea95a8b1a29852f260ccac5b46d3aac')
 
 build() {
   cd "$pkgname-$pkgver"
