@@ -2,7 +2,7 @@
 
 _pkgname=pumba
 pkgname=pumba-bin
-pkgver=0.11.1
+pkgver=0.11.5
 pkgrel=1
 pkgdesc="Chaos testing, network emulation and stress testing tool for containers "
 arch=('aarch64' 'x86_64')
@@ -14,8 +14,8 @@ provides=('pumba')
 source_x86_64=("${_pkgname}-linux-x86_64::$url/releases/download/$pkgver/${_pkgname}_linux_amd64")
 source_aarch64=("${_pkgname}-linux-aarch64::$url/releases/download/$pkgver/${_pkgname}_linux_arm64")
 
-sha256sums_aarch64=('9eebb2ce7ebb08e40b71f7585c71cabfcc6add0bf3bcc638b95ab90f867cf69d')
-sha256sums_x86_64=('d7cfc2e91fbec03bd6e46e2d45be6a5d643763066658cdc9c3d0a10b7a146919')
+sha256sums_aarch64=('13f8c60780672656471993633659ca66ae2f89ce3cd099005b1746081cadec1d')
+sha256sums_x86_64=('f3aaebcf1e4199e93f3cbcbc8c029af8627cf75de9bd58f766acf4d23dcdd2c3')
 
 package() {
     mkdir -p ${pkgdir}/usr/bin
