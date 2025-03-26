@@ -1,0 +1,13 @@
+pkgbase = opkssh-bin
+	pkgdesc = opkssh (OpenPubkey SSH)
+	pkgver = 0.3.0
+	pkgrel = 1
+	url = https://github.com/openpubkey/opkssh
+	arch = x86_64
+	license = Apache-2.0
+	provides = opkssh
+	conflicts = opkssh
+	source = opkssh-linux-x86_64::https://github.com/openpubkey/opkssh/releases/download/v0.3.0/opkssh-linux-amd64
+	sha256sums = 014c6105c8d0546c06bf2f9c3b87ea0ad204a96e31cc9669e474d25cefd77d48
+
+pkgname = opkssh-bin
