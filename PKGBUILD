@@ -2,7 +2,7 @@
 
 _pkgname=opkssh
 pkgname=opkssh-git
-pkgver=r222
+pkgver=r222.e2a75ec
 pkgrel=1
 pkgdesc="opkssh (OpenPubkey SSH)"
 arch=('x86_64')
