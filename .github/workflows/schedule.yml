@@ -40,7 +40,7 @@ jobs:
           - pkg: opkssh
           - pkg: opkssh-bin
           - pkg: opkssh-git
-          - pkg: pumba
+          # - pkg: pumba
           - pkg: pumba-bin
           - pkg: ravro_dcrpt-git
           - pkg: prometheus-snmp-exporter-git
