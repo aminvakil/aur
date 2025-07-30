@@ -37,6 +37,7 @@ jobs:
           - pkg: google-tsunami-security-scanner-git
           # - pkg: google-tsunami-security-scanner-plugins-git
           # - pkg: jmeter-plugins-manager
+          - pkg: multi-git-status
           - pkg: opkssh
           - pkg: opkssh-bin
           - pkg: opkssh-git
