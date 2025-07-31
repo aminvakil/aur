@@ -1,13 +1,14 @@
-# Maintainer: Bart Louwers <sleeping@emeel.net>
+# Maintainer: Amin Vakil <info AT aminvakil DOT com>
+# Contributor: Bart Louwers <sleeping@emeel.net>
 pkgname=multi-git-status
-pkgver=2.2
+pkgver=2.3
 pkgrel=1
 pkgdesc='Show uncommited, untracked and unpushed changes in multiple Git repositories.'
 arch=('any')
 url='https://github.com/fboender/multi-git-status'
 license=('MIT')
 source=("https://github.com/fboender/$pkgname/archive/$pkgver.tar.gz")
-md5sums=('3135e32e3fdf065ef54acf38470effe9')
+sha256sums=('2634b4b8b3d69a397f5462ec1d72a77d5b395f363ed8e1aabfbf7e5e4172f93f')
 
 package() {
 	cd "$pkgname-$pkgver"
