@@ -1,4 +1,5 @@
-# Maintainer of this PKGBUILD file: Martino Pilia <martino.pilia@gmail.com>
+# Maintainer: Amin Vakil <info AT aminvakil DOT com>
+# Contributor: Martino Pilia <martino.pilia@gmail.com>
 pkgname=hadolint
 pkgver=2.12.0
 pkgrel=1
