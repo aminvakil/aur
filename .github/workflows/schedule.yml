@@ -36,7 +36,7 @@ jobs:
           - pkg: google-tsunami-security-scanner
           - pkg: google-tsunami-security-scanner-git
           # - pkg: google-tsunami-security-scanner-plugins-git
-          - pkg: hadolint
+          # - pkg: hadolint
           # - pkg: jmeter-plugins-manager
           - pkg: multi-git-status
           - pkg: opkssh
