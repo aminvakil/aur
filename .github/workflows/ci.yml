@@ -108,8 +108,13 @@ jobs:
           docker exec "$(cat ${container_id})" bash -c "echo '    Hostname aur.archlinux.org' >> /root/.ssh/config"
           docker exec "$(cat ${container_id})" bash -c "echo '    IdentityFile ~/.ssh/keys/aur' >> /root/.ssh/config"
 
+      - name: Retrieve AUR IP
+        run: |
+          aur_ip=$(dig +short aur.archlinux.org)
+          echo "aur_ip=${aur_ip}" >> $GITHUB_ENV
+
       - name: Add aur.archlinux host key
-        run: docker exec "$(cat ${container_id})" bash -c "echo 'aur.archlinux.org,95.216.144.15 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBLMiLrP8pVi5BFX2i3vepSUnpedeiewE5XptnUnau+ZoeUOPkpoCgZZuYfpaIQfhhJJI5qgnjJmr4hyJbe/zxow=' > /root/.ssh/known_hosts"
+        run: docker exec "$(cat ${container_id})" bash -c "echo 'aur.archlinux.org,${aur_ip} ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBLMiLrP8pVi5BFX2i3vepSUnpedeiewE5XptnUnau+ZoeUOPkpoCgZZuYfpaIQfhhJJI5qgnjJmr4hyJbe/zxow=' > /root/.ssh/known_hosts"
 
       - name: Configure git user.email and user.name
         run: |
