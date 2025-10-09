@@ -10,6 +10,7 @@ jobs:
     name: makepkg
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         include:
           - pkg: actionlint-git
