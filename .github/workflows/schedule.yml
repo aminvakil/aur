@@ -43,7 +43,6 @@ jobs:
           - pkg: opkssh-git
           # - pkg: pumba
           - pkg: pumba-bin
-          - pkg: ravro_dcrpt-git
           - pkg: prometheus-snmp-exporter-git
           - pkg: python-bandcamp-api-git
           - pkg: spotdl
