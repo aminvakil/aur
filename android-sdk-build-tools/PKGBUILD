@@ -10,7 +10,7 @@ _micro=1
 _ver=35.0.1
 _displayversion=35
 pkgver=r35.0.1
-pkgrel=1
+pkgrel=2
 _sdk=android-sdk
 _android=android-15
 
@@ -21,6 +21,8 @@ license=('custom')
 depends=('gcc-libs' 'zlib' 'bash')
 optdepends=('lib32-gcc-libs' 'lib32-zlib' 'java-runtime'
             'ncurses5-compat-libs: necessary to run bcc_compat and llvm-rs-cc')
+conflicts=('zipalign')
+provides=('zipalign')
 
 source=("https://dl.google.com/android/repository/build-tools_r${_ver}_linux.zip"
         "package.xml")
