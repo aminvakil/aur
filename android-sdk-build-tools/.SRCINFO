@@ -1,7 +1,7 @@
 pkgbase = android-sdk-build-tools
 	pkgdesc = Build-Tools for Google Android SDK (aapt, aidl, dexdump, dx, llvm-rs-cc)
 	pkgver = r35.0.1
-	pkgrel = 1
+	pkgrel = 2
 	url = https://developer.android.com/studio/releases/build-tools
 	arch = x86_64
 	license = custom
@@ -12,6 +12,8 @@ pkgbase = android-sdk-build-tools
 	optdepends = lib32-zlib
 	optdepends = java-runtime
 	optdepends = ncurses5-compat-libs: necessary to run bcc_compat and llvm-rs-cc
+	provides = zipalign
+	conflicts = zipalign
 	options = !strip
 	source = https://dl.google.com/android/repository/build-tools_r35.0.1_linux.zip
 	source = package.xml
