@@ -12,7 +12,7 @@ _displayversion=36
 pkgver=r36.1
 pkgrel=1
 _sdk=android-sdk
-_android=android-15
+_android=android-16
 
 pkgdesc='Build-Tools for Google Android SDK (aapt, aidl, dexdump, dx, llvm-rs-cc)'
 arch=('x86_64')
