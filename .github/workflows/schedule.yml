@@ -46,6 +46,7 @@ jobs:
           - pkg: pumba-bin
           - pkg: prometheus-snmp-exporter-git
           - pkg: python-bandcamp-api-git
+          - pkg: slipstream-git
           - pkg: spotdl
           - pkg: thelounge-beta
           - pkg: trivy-git
