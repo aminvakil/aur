@@ -1,0 +1,17 @@
+pkgbase = slipstream-git
+	pkgdesc = High-performance multi-path covert channel over DNS in Rust with vibe coding
+	pkgver = r63.af38c2b
+	pkgrel = 1
+	url = https://github.com/Mygod/slipstream-rust
+	arch = x86_64
+	license = Apache-2.0
+	makedepends = git
+	makedepends = cargo
+	makedepends = cmake
+	provides = slipstream
+	conflicts = slipstream
+	options = !lto
+	source = slipstream-rust::git+https://github.com/Mygod/slipstream-rust.git
+	sha256sums = SKIP
+
+pkgname = slipstream-git
