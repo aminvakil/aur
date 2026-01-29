@@ -1,11 +1,11 @@
 pkgbase = pumba-bin
 	pkgdesc = Chaos testing, network emulation and stress testing tool for containers
 	pkgver = 0.11.6
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/alexei-led/pumba
 	arch = aarch64
 	arch = x86_64
-	license = Apache
+	license = Apache-2.0
 	provides = pumba
 	conflicts = pumba
 	source_aarch64 = pumba-linux-aarch64::https://github.com/alexei-led/pumba/releases/download/0.11.6/pumba_linux_arm64
