@@ -42,6 +42,7 @@ jobs:
           - pkg: opkssh
           - pkg: opkssh-bin
           - pkg: opkssh-git
+          - pkg: paqet
           # - pkg: pumba
           - pkg: pumba-bin
           - pkg: prometheus-snmp-exporter-git
