@@ -64,6 +64,12 @@ jobs:
       - name: Namcap!
         run: if [ ! -f ci/"${{ matrix.pkg }}"/namcap_skip ]; then docker exec "$(cat ${container_id})" su devel sh -c "cd /pkg && namcap PKGBUILD"; fi
 
+      - name: Install alpm-lint
+        run: docker exec "$(cat ${container_id})" pacman -Syu alpm-lint --noconfirm
+
+      - name: alpm-lint!
+        run: if [ ! -f ci/"${{ matrix.pkg }}"/alpm_lint_skip ]; then docker exec "$(cat ${container_id})" su devel sh -c "cd /pkg && alpm-lint check"; fi
+
       - name: Makepkg!
         run: docker exec "$(cat ${container_id})" su devel sh -c "cd /pkg && makepkg -sri --check --noconfirm"
 
