@@ -5,9 +5,9 @@ pkgbase = pumba
 	url = https://github.com/alexei-led/pumba
 	arch = x86_64
 	license = Apache-2.0
-	checkdepends = golangci-lint
 	makedepends = go
 	makedepends = git
+	makedepends = golangci-lint
 	source = pumba-0.11.7-2.tar.gz::https://github.com/alexei-led/pumba/archive/refs/tags/0.11.7.tar.gz
 	sha256sums = 41811a0148d6dced288c2fa0886f5137280802f4b516de71a47e0ed56497a932
 
