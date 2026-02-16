@@ -2,7 +2,7 @@
 
 pkgname=pumba
 pkgver=0.11.7
-pkgrel=1
+pkgrel=2
 pkgdesc="Chaos testing, network emulation and stress testing tool for containers"
 arch=('x86_64')
 url="https://github.com/alexei-led/pumba"
