@@ -1,14 +1,14 @@
 pkgbase = pumba
 	pkgdesc = Chaos testing, network emulation and stress testing tool for containers
-	pkgver = 0.11.7
-	pkgrel = 2
+	pkgver = 0.12.3
+	pkgrel = 1
 	url = https://github.com/alexei-led/pumba
 	arch = x86_64
 	license = Apache-2.0
 	makedepends = go
 	makedepends = git
 	makedepends = golangci-lint
-	source = pumba-0.11.7-2.tar.gz::https://github.com/alexei-led/pumba/archive/refs/tags/0.11.7.tar.gz
-	sha256sums = 41811a0148d6dced288c2fa0886f5137280802f4b516de71a47e0ed56497a932
+	source = pumba-0.12.3-1.tar.gz::https://github.com/alexei-led/pumba/archive/refs/tags/0.12.3.tar.gz
+	sha256sums = e9907dc43091b85683a4c3b52b0e4bf94ca821618ab21dda212e069ce455b19e
 
 pkgname = pumba
