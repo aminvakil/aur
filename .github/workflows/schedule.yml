@@ -43,7 +43,7 @@ jobs:
           - pkg: opkssh-bin
           - pkg: opkssh-git
           - pkg: paqet
-          # - pkg: pumba
+          - pkg: pumba
           - pkg: pumba-bin
           - pkg: prometheus-snmp-exporter-git
           - pkg: python-bandcamp-api-git
