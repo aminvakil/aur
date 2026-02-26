@@ -7,7 +7,7 @@ pkgrel=1
 pkgdesc='Python Proxy that implements DPI evasion mechanisms '
 arch=('any')
 url='https://github.com/UPB-SysSec/DPYProxy'
-license=('Apahce-2.0')
+license=('Apache-2.0')
 
 # https://github.com/UPB-SysSec/DPYProxy/blob/master/pyproject.toml
 depends=(
@@ -24,8 +24,19 @@ provides=('python-dpyproxy')
 replaces=('python-dpyproxy')
 conflicts=('python-dpyproxy')
 
-source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-sha256sums=('ff92cc1efd2b354da4a21207abbe42733153c008d06d63e06a26c19fc914a6d0')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz"
+	"https://raw.githubusercontent.com/aminvakil/DPYProxy/refs/heads/initial_pyproject/pyproject.toml"
+	"https://raw.githubusercontent.com/aminvakil/DPYProxy/refs/heads/initial_pyproject/dpyproxy/__init__.py")
+sha256sums=('ff92cc1efd2b354da4a21207abbe42733153c008d06d63e06a26c19fc914a6d0'
+            '2dcc9e6aa3b9422079a4dbc13533eb311fdf62e6c7492bfab6d71bbde9677fef'
+            'e176952620651548ef3687c02018fea2c75f9cd863f5835b69a42feaf7582c05')
+
+prepare() {
+        cd ${_pkgname}-${pkgver}
+	cp ../pyproject.toml .
+	mkdir -p dpyproxy
+	cp ../__init__.py dpyproxy/
+}
 
 # Document: https://wiki.archlinux.org/title/Python_package_guidelines
 build() {
