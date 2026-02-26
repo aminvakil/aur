@@ -7,7 +7,7 @@ pkgrel=1
 pkgdesc='Python Proxy that implements DPI evasion mechanisms '
 arch=('any')
 url='https://github.com/UPB-SysSec/DPYProxy'
-license=('Apahce-2.0')
+license=('Apache-2.0')
 
 # https://github.com/UPB-SysSec/DPYProxy/blob/master/pyproject.toml
 depends=(
