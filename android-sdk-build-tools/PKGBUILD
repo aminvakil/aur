@@ -14,7 +14,7 @@ _displayversion=37
 pkgver=r37.0.0
 pkgrel=1
 _sdk=android-sdk
-_android=android-16
+_android=android-37.0
 
 pkgdesc='Build-Tools for Google Android SDK (aapt, aidl, dexdump, dx, llvm-rs-cc)'
 arch=('x86_64')
