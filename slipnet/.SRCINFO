@@ -1,0 +1,14 @@
+pkgbase = slipnet
+	pkgdesc = Android VPN client with DNS tunneling (DNSTT, NoizDNS & Slipstream), NaiveProxy, SSH, Tor, and DoH support — featuring a built-in DNS scanner.
+	pkgver = 2.4.1
+	pkgrel = 1
+	url = https://github.com/anonvector/SlipNet
+	arch = aarch64
+	arch = x86_64
+	license = custom
+	makedepends = go
+	makedepends = git
+	source = git+https://github.com/anonvector/SlipNet/#tag=v2.4.1
+	sha256sums = 3332a3dc4394af34ddab9d1342a490c65b55d268caa0db3feed57d8ae52a92f7
+
+pkgname = slipnet
