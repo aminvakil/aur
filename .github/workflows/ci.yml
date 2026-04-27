@@ -22,8 +22,8 @@ jobs:
       - name: retrieve changed pkgs
         id: changed-pkgs
         run: |
-          CHANGED_DIRS=$(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep PKGBUILD | cut -d / -f 1)
-          if [ -z "$CHANGED_DIRS" ]; then CHANGED_DIRS=$(git diff --name-only origin/master..HEAD | grep PKGBUILD | cut -d / -f 1); fi
+          CHANGED_DIRS=$(git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | awk -F/ 'NF > 1 { print $1 == "ci" ? $2 : $1 }' | while read -r pkg; do [ -f "$pkg/PKGBUILD" ] && echo "$pkg"; done | sort -u)
+          if [ -z "$CHANGED_DIRS" ]; then CHANGED_DIRS=$(git diff --name-only origin/master..HEAD | awk -F/ 'NF > 1 { print $1 == "ci" ? $2 : $1 }' | while read -r pkg; do [ -f "$pkg/PKGBUILD" ] && echo "$pkg"; done | sort -u); fi
           CHANGED_PKGS=$(for pkg in ${CHANGED_DIRS}; do echo -n '{"pkg":'; echo -n "\"$pkg"\"; echo -n "},"; done | sed 's/,\([^,]*\)$/\1/';)
           echo "matrix={\"include\":[${CHANGED_PKGS}]}" >> $GITHUB_OUTPUT
           if [ -z "$CHANGED_PKGS" ]; then echo "has_changes=false" >> $GITHUB_OUTPUT; else echo "has_changes=true" >> $GITHUB_OUTPUT; fi
