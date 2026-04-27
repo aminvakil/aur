@@ -59,7 +59,7 @@ jobs:
           # - pkg: zoiper-bin
     steps:
       - name: Check out the codebase.
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Exit if pkg doesn't exist.
         run: if [ ! -d "${{ matrix.pkg }}" ]; then exit 1; fi
