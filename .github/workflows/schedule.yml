@@ -81,7 +81,7 @@ jobs:
           fi
 
       - name: Upgrade all packages.
-        run: docker exec "$(cat ${container_id})" pacman -Suy --noconfirm
+        run: docker exec "$(cat ${container_id})" pacman -Syu --noconfirm
 
       - name: Change ownership of package folder
         run: "docker exec $(cat ${container_id}) chown -R devel: /pkg"
