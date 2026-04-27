@@ -16,7 +16,7 @@ jobs:
       has_changes: ${{ steps.changed-pkgs.outputs.has_changes }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 0
       - name: retrieve changed pkgs
@@ -37,7 +37,7 @@ jobs:
       matrix: ${{fromJson(needs.changed_pkgs.outputs.matrix)}}
     steps:
       - name: Check out the codebase.
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Exit if pkg doesn't exist.
         run: if [ ! -d "${{ matrix.pkg }}" ]; then exit 1; fi
@@ -98,7 +98,7 @@ jobs:
       matrix: ${{fromJson(needs.changed_pkgs.outputs.matrix)}}
     steps:
       - name: Check out the codebase.
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Pull base image.
         run: docker pull quay.io/aminvakil/archlinux:latest
