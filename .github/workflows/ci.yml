@@ -4,6 +4,9 @@ name: CI
   pull_request:
   push:
 
+permissions:
+  contents: read
+
 jobs:
 
   changed_pkgs:
