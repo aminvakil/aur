@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.changed-pkgs.outputs.matrix }}
+      has_changes: ${{ steps.changed-pkgs.outputs.has_changes }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -25,9 +26,11 @@ jobs:
           if [ -z "$CHANGED_DIRS" ]; then CHANGED_DIRS=$(git diff --name-only origin/master..HEAD | grep PKGBUILD | cut -d / -f 1); fi
           CHANGED_PKGS=$(for pkg in ${CHANGED_DIRS}; do echo -n '{"pkg":'; echo -n "\"$pkg"\"; echo -n "},"; done | sed 's/,\([^,]*\)$/\1/';)
           echo "matrix={\"include\":[${CHANGED_PKGS}]}" >> $GITHUB_OUTPUT
+          if [ -z "$CHANGED_PKGS" ]; then echo "has_changes=false" >> $GITHUB_OUTPUT; else echo "has_changes=true" >> $GITHUB_OUTPUT; fi
 
   makepkg:
     needs: changed_pkgs
+    if: needs.changed_pkgs.outputs.has_changes == 'true'
     name: makepkg
     runs-on: ubuntu-latest
     strategy:
