@@ -1,0 +1,20 @@
+pkgbase = python-datastar-py
+	pkgdesc = Helper functions and classes for the Datastar library
+	pkgver = 1.0.0
+	pkgrel = 1
+	url = https://github.com/starfederation/datastar-python
+	arch = any
+	license = MIT
+	makedepends = python-build
+	makedepends = python-hatchling
+	makedepends = python-installer
+	depends = python
+	optdepends = python-django: Django integration
+	optdepends = python-fastapi: FastAPI integration
+	optdepends = python-quart: Quart integration
+	optdepends = python-sanic: Sanic integration
+	optdepends = python-starlette: Starlette integration
+	source = https://files.pythonhosted.org/packages/source/d/datastar_py/datastar_py-1.0.0.tar.gz
+	sha512sums = 683cc4aaf5b5fd7a5d93713e9047c4206ffeaa7bb29d114cb59c964c0cb973a365d5d2442945324f31e2d96a5592ab96e4a36f7c0512ec099fd08060f53dd688
+
+pkgname = python-datastar-py
