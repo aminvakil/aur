@@ -28,33 +28,44 @@ jobs:
           - pkg: awx
           - pkg: butane
           - pkg: butane-bin
+          - pkg: cadvisor-bin
           - pkg: docker-bench-security
           - pkg: docker-bench-security-git
           - pkg: docker-prune
           - pkg: dockle
+          - pkg: dpyproxy
           - pkg: dstp
           - pkg: dstp-git
           - pkg: gnome-shell-extension-dash-to-dock-git
           - pkg: gnome-shell-extension-public-ip-git
           - pkg: gnome-shell-extension-workspace-matrix
-          # - pkg: google-tsunami-security-scanner
-          # - pkg: google-tsunami-security-scanner-git
-          # - pkg: google-tsunami-security-scanner-plugins-git
-          # - pkg: jmeter-plugins-manager
+          - pkg: google-tsunami-security-scanner
+          - pkg: google-tsunami-security-scanner-git
+          - pkg: google-tsunami-security-scanner-plugins-git
+          - pkg: hadolint
+          - pkg: jmeter-plugins-manager
+          - pkg: mhrv-rs-bin
           - pkg: multi-git-status
+          - pkg: obfs4proxy
           - pkg: opkssh
           - pkg: opkssh-bin
           - pkg: opkssh-git
           - pkg: paqet
+          - pkg: pi
           - pkg: prometheus-snmp-exporter-git
           - pkg: python-bandcamp-api-git
+          - pkg: python-datastar-py
+          - pkg: sentry-relay
+          - pkg: sentry-relay-git
+          - pkg: slipnet
+          - pkg: slipnet-bin
           - pkg: slipstream-git
           - pkg: spotdl
           - pkg: thelounge-beta
           - pkg: trivy-git
           - pkg: vim-markdown-git
           - pkg: vim-pkgbuild-git
-          # - pkg: zoiper-bin
+          - pkg: zoiper-bin
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
