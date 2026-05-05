@@ -58,8 +58,6 @@ jobs:
           - pkg: python-datastar-py
           - pkg: sentry-relay
           - pkg: sentry-relay-git
-          # - pkg: slipnet
-          - pkg: slipnet-bin
           - pkg: slipstream-git
           - pkg: spotdl
           - pkg: thelounge-beta
