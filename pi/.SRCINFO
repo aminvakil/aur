@@ -1,13 +1,13 @@
 pkgbase = pi
 	pkgdesc = AI coding agent for the terminal — minimal, extensible and optimized for tool use
 	pkgver = 0.74.0
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/earendil-works/pi
 	arch = x86_64
 	arch = aarch64
 	license = MIT
 	makedepends = npm
-	depends = nodejs>=20
+	depends = nodejs
 	optdepends = tmux: for background bash capabilities
 	optdepends = fd: system-provided backend for the find tool
 	optdepends = ripgrep: system-provided backend for the grep tool
