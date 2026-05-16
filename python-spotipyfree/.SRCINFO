@@ -1,0 +1,18 @@
+pkgbase = python-spotipyfree
+	pkgdesc = A Spotipy-compatible wrapper using SpotAPI
+	pkgver = 1.4.2
+	pkgrel = 1
+	url = https://pypi.org/project/spotipyFree/
+	arch = any
+	license = MIT
+	makedepends = python-build
+	makedepends = python-installer
+	makedepends = python-setuptools
+	makedepends = python-wheel
+	depends = python
+	depends = python-pymongo
+	depends = python-spotapi
+	source = https://files.pythonhosted.org/packages/source/s/spotipyfree/spotipyfree-1.4.2.tar.gz
+	sha512sums = 25d6515c01c056aa8201f13062a00e38fca2851a2e27d72fd0100f780aa84843060c800cdce6b373686a7611a6c6857cf6af675f2ebc0576d3c40e56f4fb0a8a
+
+pkgname = python-spotipyfree
