@@ -56,6 +56,10 @@ jobs:
           - pkg: prometheus-snmp-exporter-git
           - pkg: python-bandcamp-api-git
           - pkg: python-datastar-py
+          - pkg: python-readerwriterlock
+          - pkg: python-spotapi
+          - pkg: python-spotipyfree
+          - pkg: python-tls-client-git
           - pkg: sentry-relay
           - pkg: sentry-relay-git
           - pkg: slipstream-git
