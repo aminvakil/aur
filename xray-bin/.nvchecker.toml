@@ -1,0 +1,4 @@
+[xray-bin]
+source = "git"
+git = "https://github.com/XTLS/Xray-core.git"
+prefix = "v"
