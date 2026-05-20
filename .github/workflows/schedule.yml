@@ -68,6 +68,7 @@ jobs:
           - pkg: trivy-git
           - pkg: vim-markdown-git
           - pkg: vim-pkgbuild-git
+          - pkg: xray-bin
           # - pkg: zoiper-bin
     steps:
       - name: Check out the codebase.
