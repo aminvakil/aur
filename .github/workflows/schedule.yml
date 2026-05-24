@@ -62,6 +62,7 @@ jobs:
           - pkg: python-tls-client-git
           - pkg: sentry-relay
           - pkg: sentry-relay-git
+          - pkg: skirk
           - pkg: slipstream
           - pkg: slipstream-git
           - pkg: spotdl
