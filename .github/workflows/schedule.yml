@@ -63,6 +63,7 @@ jobs:
           - pkg: sentry-relay
           - pkg: sentry-relay-git
           - pkg: skirk
+          - pkg: skirk-desktop
           - pkg: slipstream
           - pkg: slipstream-git
           - pkg: spotdl
