@@ -68,6 +68,7 @@ jobs:
           - pkg: slipstream-git
           - pkg: spotdl
           - pkg: thelounge-beta
+          - pkg: tls-client-git
           - pkg: trivy-git
           - pkg: vim-markdown-git
           - pkg: vim-pkgbuild-git
