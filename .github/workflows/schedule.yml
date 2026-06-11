@@ -45,6 +45,8 @@ jobs:
           - pkg: google-tsunami-security-scanner-plugins-git
           - pkg: hadolint
           - pkg: jmeter-plugins-manager
+          - pkg: loreai
+          - pkg: loreai-pi
           - pkg: mhrv-rs-bin
           - pkg: multi-git-status
           - pkg: obfs4proxy
