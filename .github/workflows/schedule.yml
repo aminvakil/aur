@@ -30,6 +30,7 @@ jobs:
           - pkg: butane
           - pkg: butane-bin
           - pkg: cadvisor-bin
+          - pkg: codex-security
           - pkg: docker-bench-security
           - pkg: docker-bench-security-git
           - pkg: docker-prune
