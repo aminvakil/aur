@@ -49,7 +49,6 @@ jobs:
           - pkg: loreai
           - pkg: loreai-pi
           - pkg: mhrv-rs-bin
-          - pkg: multi-git-status
           - pkg: obfs4proxy
           - pkg: opkssh
           - pkg: opkssh-bin
