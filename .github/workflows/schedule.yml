@@ -74,6 +74,7 @@ jobs:
           - pkg: vim-markdown-git
           - pkg: vim-pkgbuild-git
           - pkg: xray-bin
+          - pkg: zg
           # - pkg: zoiper-bin
     steps:
       - name: Check out the codebase.
