@@ -2,7 +2,7 @@
 
 pkgname=pi
 pkgver=0.86.1
-pkgrel=1
+pkgrel=2
 pkgdesc="AI coding agent for the terminal — minimal, extensible and optimized for tool use"
 arch=('x86_64' 'aarch64')
 url="https://github.com/earendil-works/pi"
@@ -35,7 +35,7 @@ build() {
   npm run build:offline
 
   # Remove packages which are only necessary in development / building
-  npm prune --omit=dev --cache "${srcdir}/npm-cache"
+  npm prune --omit=dev --ignore-scripts --no-audit --no-fund --cache "${srcdir}/npm-cache"
 }
 
 package() {
@@ -60,10 +60,7 @@ package() {
   cp -a packages/coding-agent/{docs,examples,CHANGELOG.md} \
     "$pkgdir/$mod_dir/packages/coding-agent/"
 
-  # This package is only useful in windows installation, therefore remove it
-  rm -rf "$pkgdir/$mod_dir/node_modules/koffi"
-
-  ln -s "$mod_dir/packages/coding-agent/dist/cli.js" "$pkgdir/usr/bin/pi"
+  ln -s "$mod_dir/packages/coding-agent/dist/bundle/cli.js" "$pkgdir/usr/bin/pi"
 
   # Copy coding-agent docs and README and CHANGELOG into /usr/share/doc/pi to align it with Arch packages
   cp -r packages/coding-agent/docs/* packages/coding-agent/examples "$pkgdir/usr/share/doc/$pkgname/"
