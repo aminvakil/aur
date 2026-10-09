@@ -65,8 +65,6 @@ jobs:
           - pkg: sentry-relay-git
           - pkg: skirk
           - pkg: skirk-desktop
-          - pkg: slipstream
-          - pkg: slipstream-git
           - pkg: spotdl
           - pkg: thelounge-beta
           - pkg: tls-client-git
