@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eux
 pacman -Syu git --noconfirm
-for i in {python-readerwriterlock,tls-client-git,python-tls-client-git}; do
+for i in {python-readerwriterlock,tls-client-git,python-tls-client-git,python-wreq}; do
         git clone --branch "${i}" --single-branch https://github.com/archlinux/aur/ "${i}"
         chown -R devel: "$i"
         sudo -u devel sh -c "cd $i && makepkg -sri --nocheck --noconfirm"
