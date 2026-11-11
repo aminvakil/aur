@@ -13,9 +13,9 @@ makedepends=(
   'clang'
   'cmake'
   'git'
-  'maturin'
   'python-build'
   'python-installer'
+  'python-maturin'
 )
 options=('!lto')
 source=("https://files.pythonhosted.org/packages/source/w/wreq/wreq-${pkgver}.tar.gz")
@@ -32,7 +32,7 @@ build() {
   export RUSTUP_TOOLCHAIN=stable
   export CARGO_TARGET_DIR=target
   export CARGO_PROFILE_RELEASE_STRIP=false
-  python -m build --wheel --no-isolation -Cbuild-args=--frozen
+  python -m build --wheel --no-isolation -Cbuild-args="--frozen --target $(rustc --print host-tuple)"
 }
 
 package() {
