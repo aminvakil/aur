@@ -62,6 +62,7 @@ jobs:
           - pkg: python-spotapi
           - pkg: python-spotipyfree
           - pkg: python-tls-client-git
+          - pkg: python-wreq
           - pkg: sentry-relay
           - pkg: sentry-relay-git
           - pkg: skirk
