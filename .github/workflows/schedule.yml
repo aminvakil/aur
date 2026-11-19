@@ -71,6 +71,7 @@ jobs:
           - pkg: thelounge-beta
           - pkg: tls-client-git
           - pkg: trivy-git
+          - pkg: tvpipe
           - pkg: vim-markdown-git
           - pkg: vim-pkgbuild-git
           - pkg: xray-bin
